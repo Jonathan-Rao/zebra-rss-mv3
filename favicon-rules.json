@@ -1,0 +1,21 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://www.google.com/s2/favicons?domain=\\1"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https://feedzebra\\.com/_/favicon/(.*)$",
+      "resourceTypes": [
+        "image",
+        "xmlhttprequest",
+        "main_frame",
+        "sub_frame"
+      ]
+    }
+  }
+]

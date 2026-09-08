@@ -1,0 +1,75 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+
+  "manifest_version": 3,
+  "name": "Zebra RSS",
+  "short_name": "Zebra RSS",
+  "version": "1.13.0",
+  "version_name": "1.13.0",
+
+  "icons": {
+    "16": "assets/icon16.png",
+    "48": "assets/icon48.png"
+  },
+
+  "background": {
+    "service_worker": "mv3-sw.js"
+  },
+
+  "action": {},
+
+  "permissions": [
+    "alarms",
+    "contextMenus",
+    "declarativeNetRequest",
+    "notifications",
+    "offscreen",
+    "storage",
+    "tabs"
+  ],
+
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "favicon",
+        "enabled": true,
+        "path": "favicon-rules.json"
+      }
+    ]
+  },
+
+  "host_permissions": [
+    "<all_urls>"
+  ],
+
+  "optional_permissions": [
+    "sessions"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "inject.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+
+  "options_page": "index.html#/settings",
+
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/sprite.png"
+      ],
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ]
+    }
+  ]
+}

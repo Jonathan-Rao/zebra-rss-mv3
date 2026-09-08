@@ -1,0 +1,22 @@
+<!doctype html>
+<!--
+  MV3 离屏文档宿主页。
+  由 mv3-sw.js 通过 chrome.offscreen.createDocument 创建，
+  用于承载原 MV2 后台页 background.js（需要 DOM / localStorage / XHR / 定时器）。
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Zebra RSS background</title>
+    <!--
+      MV3 离屏文档兼容垫片：离屏文档里 chrome.runtime.getManifest 不是函数，
+      不补上会导致 background.js 依赖注入失败、所有存储 RPC 报 "Method not supported"。
+      详见 offscreen-shim.js 顶部说明。
+      注意：MV3 的 CSP 禁止内联脚本，所以必须用外部文件引入，且要放在 background.js 之前。
+    -->
+    <script src="offscreen-shim.js"></script>
+</head>
+<body>
+<script src="background.js"></script>
+</body>
+</html>
