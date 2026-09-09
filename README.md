@@ -27,6 +27,13 @@ Zebra RSS 是一款 Chrome 浏览器扩展，用于聚合、阅读和管理 RSS 
 - 浅色 / 深色主题与扩展图标配色
 - 设置界面中英语言切换（记忆偏好）
 
+## 效果预览
+
+<p align="center">
+  <img src="https://jonathan-rao.github.io/picx-images-hosting/20260909/zebra-rss.pg3dg23t7.jpg" alt="zebra-rss-mv3效果示例" width="820">
+</p>
+
+
 ## 安装方法
 
 1. 打开 Chrome，在地址栏访问 `chrome://extensions`；
@@ -49,3 +56,5 @@ Zebra RSS 是一款 Chrome 浏览器扩展，用于聚合、阅读和管理 RSS 
 | `extension.getURL` | `runtime.getURL` |
 | 网络拦截（`webRequest`） | `declarativeNetRequest`（favicon 规则） |
 | 内联脚本 | 独立外部脚本文件（符合 MV3 CSP） |
+
+
